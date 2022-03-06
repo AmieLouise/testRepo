@@ -1,0 +1,384 @@
+/*===========================================================================================*\
+
+	Mini Bootstrap Framework - Amie Dooley
+
+	Mobile First Design
+
+	3 breakpoints:
+		- 	Breakpoint 1 - d - min-width 992px - Desktop/Laptop/Tablet landscape
+		- 	Breakpoint 2 - t - min-width 767px - Tablet Portrait
+		-	  Breakpoint 3 - m - min-width 0px - Mobile
+
+\*============================================================================================*/
+
+/*========================================================*\
+	Normalize
+\*========================================================*/
+/*Make it so padding doesn't count to overall width*/
+html * {
+  box-sizing: border-box !important;
+}
+
+img {
+  max-width: 100%;
+  width: auto;
+}
+
+/*========================================================*\
+	Section
+\*========================================================*/
+section {
+  margin-bottom: 30px;
+}
+
+
+/*========================================================*\
+	Container
+\*========================================================*/
+.container {
+  width: 100%;
+  margin: auto;
+  padding: 0 15px;
+  max-width: 1170px;
+}
+
+/*========================================================*\
+	Row
+\*========================================================*/
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  position: relative;
+  margin: 0 -15px;
+}
+
+.row:after {
+  display: table;
+  clear: both;
+  content: '';
+}
+
+.row.v-centre {
+  align-items: center;
+}
+
+.row.h-centre {
+  justify-content: center;
+}
+/*========================================================*\
+	Columns
+\*========================================================*/
+
+.col {
+  position: relative;
+  padding: 0 15px;
+  min-height: 1px;
+  vertical-align: top;
+}
+
+.col.v-center {
+  align-self: center;
+}
+
+/*Mobile - Columns*/
+/* Mobile sizing, doens't need media query as this is the dafult */
+.col.m-full {
+  width: 100%;
+}
+
+.col.m-half {
+  width: 50%;
+}
+
+.col.m-third {
+  width: 33.3%;
+}
+
+.col.m-two-thirds {
+  width: 66.6%;
+}
+
+.col.m-quarter {
+  width: 25%;
+}
+
+.col.m-quarter {
+  width: 25%;
+}
+
+.col.m-three-quarters {
+  width: 75%;
+}
+
+/*Tablet Portrait - Columns*/
+/* Tablet Sizing - media query decalring these values should only be applied if window is over 767px wide */
+
+@media (min-width: 767px) {
+  .col.t-full {
+    width: 100%;
+  }
+
+  .col.t-half {
+    width: 50%;
+  }
+
+  .col.t-third {
+    width: 33.3%;
+  }
+
+  .col.t-two-thirds {
+    width: 66.6%;
+  }
+
+  .col.t-quarter {
+    width: 25%;
+  }
+
+  .col.t-three-quarters {
+    width: 75%;
+  }
+}
+
+/*  Desktop - media query decalring these values should only be applied if window is over 992px wide */
+@media (min-width: 992px) {
+  .col.d-full {
+    width: 100%;
+  }
+
+  .col.d-half {
+    width: 50%;
+  }
+
+  .col.d-third {
+    width: 33.3%;
+  }
+
+  .col.d-two-thirds {
+    width: 66.6%;
+  }
+
+  .col.d-quarter {
+    width: 25%;
+  }
+
+  .col.d-three-quarters {
+    width: 75%;
+  }
+
+  .col.d-eighth {
+    width: 12.5%;
+  }
+
+  .col.d-seven-eighths {
+    width: 87.5%;
+  }
+
+  .col.d-one-sixth {
+    width: 16.65%;
+  }
+}
+
+/*========================================================*\
+	Typography
+\*========================================================*/
+/*========================================================*\
+		Font Size
+	\*========================================================*/
+/*========================================================*\
+			Root
+		\*========================================================*/
+html {
+  font-size: 12px;
+}
+
+/*========================================================*\
+			Mobile
+		\*========================================================*/
+h1 {
+  font-size: 2.488rem;
+}
+
+h2 {
+  font-size: 2.074rem;
+}
+
+h3 {
+  font-size: 1.728rem;
+}
+
+p,
+label{
+  font-size: 1rem;
+}
+
+a,
+span,
+strong {
+  font-size: inherit;
+}
+
+/*========================================================*\
+			Tablet Portrait
+		\*========================================================*/
+@media (min-width: 767px) {
+  h1 {
+    font-size: 3.052rem;
+  }
+
+  h2 {
+    font-size: 2.441rem;
+  }
+
+  h3 {
+    font-size: 1.953rem;
+  }
+
+  p,
+  label{
+    font-size: 1rem;
+  }
+}
+/*========================================================*\
+			Desktop/Laptop/Tablet landscape
+		\*========================================================*/
+@media (min-width: 767px) {
+    h1 {
+      font-size: 3.052rem;
+    }
+  
+    h2 {
+      font-size: 2.441rem;
+    }
+  
+    h3 {
+      font-size: 1.953rem;
+    }
+  
+    p,
+    label{
+      font-size: 1rem;
+    }
+}
+/*========================================================*\
+		Font Color
+	\*========================================================*/
+h1,
+h2 {
+  color: #333333;
+}
+
+h3,
+p,
+label {
+  color: #333333;
+}
+
+a,
+strong,
+span {
+  color: inherit;
+}
+
+
+/*========================================================*\
+		Font Spacing
+	\*========================================================*/
+h1,
+h2 {
+  margin: 15px 0;
+}
+
+h3,
+p,
+label{
+  margin: 10px 0 10px 0;
+}
+
+/*========================================================*\
+		Font Family
+	\*========================================================*/
+h1,
+h2,
+h3 {
+  font-family: 'Nunito Sans', sans-serif;}
+
+p,
+li,
+a, 
+span,
+label {
+  font-family: 'Nunito Sans', sans-serif !important;
+}
+/*========================================================*\
+		Font Weight
+	\*========================================================*/
+h1 {
+  font-weight: bold;
+}
+
+h2,
+h3 {
+  font-weight: normal;
+}
+
+/*========================================================*\
+		Line Height
+	\*========================================================*/
+h1,
+h2,
+h3 {
+  line-height: 1.7;
+}
+
+p,
+label {
+  line-height: 2.1;
+}
+
+@media (min-width: 992px) {
+  h1,
+  h2,
+  h3 {
+    line-height: 1.2;
+  }
+
+  p,
+  label {
+    line-height: 1.5;
+  }
+}
+
+/*========================================================*\
+	General
+\*========================================================*/
+.divider {
+  width: 90%;
+  height: 1px;
+  margin: 45px auto;
+  background-color: #afafaf;
+}
+
+a {
+  text-decoration: none;
+}
+
+.t-align-center {
+  text-align: center;
+}
+
+.t-align-right {
+  text-align: right;
+}
+
+.t-align-left {
+  text-align: left;
+}
+
+.product-image-wrp {
+  max-width: 250px;
+  width: 100%;
+  margin: auto;
+}

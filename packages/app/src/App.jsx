@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import Header from './Header'
+import './styles/Bootstrap.css' 
+import './styles/styles.css'
+import TilesContainer from './TilesContainer';
+
+
 
 const App = (props) => {
   const [state, setState] = useState({
@@ -13,25 +17,25 @@ const App = (props) => {
       setState({ ...state, loading: true })
 
       // 1. retrieve data via graphql
-      const response = await fetch('/graphql', {
-        method: 'post',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify({
-          variables: {},
-          query: `query {
-            message
-          }`,
-        }),
-      })
-
-      // 2. alternatively retrieve data directly from the api
-      // const response = await fetch('/api',{
+      // const response = await fetch('/graphql', {
+      //   method: 'post',
       //   headers: {
       //     'content-type': 'application/json',
-      //   }
+      //   },
+      //   body: JSON.stringify({
+      //     variables: {},
+      //     query: `query {
+      //       message
+      //     }`,
+      //   }),
       // })
+
+      // 2. alternatively retrieve data directly from the api
+      const response = await fetch('/api',{
+        headers: {
+          'content-type': 'application/json',
+        }
+      })
 
       const { data } = await response.json()
 
@@ -42,10 +46,20 @@ const App = (props) => {
   }, props)
 
   if (state.loading) {
-    return null
+    return (
+      <div className='product-wrp'> 
+        <p>Loading</p>   
+      </div>
+    )
+  } else {
+    return (
+        <div className='product-wrp'> 
+            <TilesContainer title='Products' productList={state.message}/>
+        </div>
+      )
+
   }
 
-  return <Header message={state.message} />
 }
 
 export default App

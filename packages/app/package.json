@@ -7,14 +7,19 @@
   "scripts": {
     "start": "webpack-dev-server --port 3000 --config=webpack.js",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch --silent"
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "css-loader": "5.2.1",
     "dotenv": "^8.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "init": "^0.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "regenerator-runtime": "^0.13.7"
+    "react-show-more-text": "^1.5.2",
+    "react-toggle": "^4.1.2",
+    "style-loader": "2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
@@ -23,6 +28,8 @@
     "@babel/preset-react": "^7.10.4",
     "@testing-library/react": "^10.4.9",
     "babel-loader": "^8.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
     "html-webpack-plugin": "^4.3.0",
     "react-hot-loader": "^4.12.21",
     "webpack": "^4.44.1",
